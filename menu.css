@@ -1,0 +1,189 @@
+.header {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+.header .logo {
+  width: 50%;
+  height: 50%;
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  width: 100%;
+}
+
+.menu {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.menu img {
+  object-fit: cover;
+  width: 100%;
+  height: 175px;
+  z-index: 2;
+}
+.menuCard {
+  background: #f6f6f6;
+  border-radius: 20px 20px 0 0;
+  margin-top: -20px;
+  z-index: 1;
+  width: 100%;
+  /*Menu apparition progressive avec un delay de 0.2s */
+}
+.menuCardTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.menuCard h1 {
+  font-family: "Shrikhand";
+  padding-left: 15px;
+  font-size: 1.6em;
+}
+.menuCard i {
+  padding-right: 30px;
+}
+.menuCard h2 {
+  align-items: flex-start;
+  margin-bottom: 5px;
+  padding-left: 15px;
+}
+.menuCard hr {
+  width: 40px;
+  height: 3px;
+  border: none;
+  background-color: #99e2d0;
+  color: #99e2d0;
+  margin: 0;
+  margin-bottom: 20px;
+  margin-left: 15px;
+}
+.menuCardCase1, .menuCardCase2, .menuCardCase3, .menuCardCase4, .menuCardCase5, .menuCardCase6, .menuCardCase7, .menuCardCase8, .menuCardCase9 {
+  width: 90%;
+  border-radius: 20px;
+  box-shadow: 0.2em 0.2em 0.8em rgba(0, 0, 0, 0.2);
+  background-color: white;
+  position: relative;
+  margin: 0 10px 10px 10px;
+  animation: apparition 1.6s;
+}
+.menuCardCase1 {
+  animation-delay: 0s;
+  display: block;
+}
+.menuCardCase2 {
+  animation-delay: 0.2s;
+  display: block;
+}
+.menuCardCase3 {
+  animation-delay: 0.4s;
+  display: block;
+}
+.menuCardCase4 {
+  animation-delay: 0.6s;
+  display: block;
+}
+.menuCardCase5 {
+  animation-delay: 0.8s;
+  display: block;
+}
+.menuCardCase6 {
+  animation-delay: 1s;
+  display: block;
+}
+.menuCardCase7 {
+  animation-delay: 1.2s;
+  display: block;
+}
+.menuCardCase8 {
+  animation-delay: 1.4s;
+  display: block;
+}
+.menuCardCase9 {
+  animation-delay: 1.6s;
+  display: block;
+}
+.menuCardCase1 :hover {
+  background-color: green;
+}
+.menuCard h3 {
+  margin: 0;
+  padding: 10px 0 0px 15px;
+}
+.menuCard h4 {
+  margin: 0;
+  padding: 5px 0 10px 15px;
+}
+.menuCard span {
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
+}
+.menu button {
+  background: linear-gradient(#FF79DA, #9356DC);
+  color: white;
+  border: none;
+  padding: 17px 23px;
+  border-radius: 100px;
+  margin: 20px;
+  width: 185px;
+}
+.menu button:hover {
+  transform: scale(1.02);
+}
+
+/*Animation*/
+@keyframes apparition {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes selection {
+  from {
+    transform: translateX(90%);
+  }
+  to {
+    transform: translateX(70%);
+  }
+}
+.footer {
+  background-color: #353535;
+  color: white;
+  padding: 25px;
+}
+.footerLogo {
+  width: 100px;
+  margin-bottom: 0px;
+}
+.footer ul {
+  list-style: none;
+  text-decoration: none;
+  padding: 0;
+}
+.footer ul li {
+  margin-bottom: 10px;
+}
+.footer ul i {
+  width: 2px;
+  height: 2px;
+  margin-right: 20px;
+  font-size: 0.9em;
+}
+.footer ul a {
+  color: white;
+  text-decoration: none;
+  font-size: 0.9em;
+}
+
+/*# sourceMappingURL=menu.css.map */
