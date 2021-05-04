@@ -1,0 +1,133 @@
+@import "header.scss";
+
+body{
+    margin:0;
+    font-family: "Roboto", sans-serif;
+    width:100%;
+}
+.menu{
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    img{
+        object-fit: cover;
+        width:100%;
+        height:175px;
+        z-index: 2;
+    }
+    &Card{
+        background: #f6f6f6;
+        border-radius: 20px 20px 0 0;
+        margin-top: -20px;
+        //padding-left: 15px;
+        //padding-right: 15px;
+        //position:static;
+        z-index: 1;
+        width: 100%;
+
+        
+        &Title{
+            display: flex;
+            justify-content: space-between;
+            align-items:center;
+
+            
+        }
+        h1{
+            font-family: "Shrikhand";            
+            padding-left: 15px;
+            font-size: 1.6em;
+
+        }
+        i{
+            padding-right: 30px;
+        }
+        h2{
+            align-items:flex-start;
+            margin-bottom: 5px;
+            padding-left: 15px;
+        }
+        
+        hr{
+            width:40px;
+            height:3px;
+            border:none;
+            background-color: #99e2d0 ;
+            color: #99e2d0;
+            margin:0; 
+            margin-bottom: 20px; 
+            margin-left: 15px;  
+        }
+
+        &Case1,&Case2,&Case3,&Case4,&Case5,&Case6,&Case7,&Case8,&Case9{
+            width:90%;
+            border-radius: 20px;
+            box-shadow: 0.2em 0.2em 0.8em rgba(0, 0, 0, 0.2);
+            background-color: white;
+            position:relative;
+            margin: 0 10px 10px 10px;
+            
+            animation: apparition 1.6s;
+        }
+        @import "animation.scss";
+
+        &Case1 :hover{
+            background-color: green;
+        }
+
+
+        h3{
+            margin:0;
+            padding:10px 0 0px 15px
+        }
+        h4{
+            margin:0;
+            padding:5px 0 10px 15px
+        }
+        
+        span{
+            position:absolute;
+            bottom: 10px;
+            right:20px;
+        }
+    }
+    button{
+        background: linear-gradient(#FF79DA, #9356DC);
+        color: white;
+
+        
+        border: none;
+        padding: 17px 23px;
+        border-radius: 100px;
+        margin: 20px;
+        width:185px;
+        &:hover {
+            transform:scale(1.02);
+        }
+    }
+
+}
+
+
+/*Animation*/
+@keyframes apparition {
+    from{
+        transform: translateY(30px);
+        opacity:0;
+    }
+    to{
+        transform: translateY(0);
+        opacity:1;
+    }
+}
+
+@keyframes selection {
+    from{
+        transform: translateX(90%)
+    }
+    to{
+        transform: translateX(70%)
+    }
+}
+@import "footer.scss";
