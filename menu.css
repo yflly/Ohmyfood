@@ -21,14 +21,37 @@
 body {
   margin: 0;
   font-family: "Roboto", sans-serif;
-  width: 100%;
 }
 
-.menu {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
+h1 {
+  font-size: 1.5em;
+  margin: 25px 0 0 0;
 }
+
+h2 {
+  font-size: 1.1em;
+  font-weight: lighter;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-size: 1em;
+  font-weight: bold;
+  margin: 0;
+}
+
+h4 {
+  font-size: 0.9em;
+  font-weight: lighter;
+  margin: 0;
+}
+
+p {
+  font-size: 1em;
+  padding-top: 17px;
+  font-weight: bold;
+}
+
 .menu img {
   object-fit: cover;
   width: 100%;
@@ -39,9 +62,91 @@ body {
   background: #f6f6f6;
   border-radius: 20px 20px 0 0;
   margin-top: -20px;
+  padding: 0 10px 16px 10px;
+  position: relative;
   z-index: 1;
-  width: 100%;
-  /*Menu apparition progressive avec un delay de 0.2s */
+  /*&Case{
+      width:94%;
+      border-radius: 20px;
+      box-shadow: 2px 2px 8px  rgba(0, 0, 0, 0.2);
+      background-color: white;
+      margin: 0 10px 10px 10px;
+
+      display:flex;
+      flex-direction: row;
+      overflow:hidden;
+
+      animation: apparition 1.6s;
+
+      &:hover{
+          .menuCardLeft{
+              h3,h4{
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              }
+          }
+          .menuCardRight{
+              animation: translationRight 2s;
+              .fa-check-circle{
+                  animation: rotation 2s; 
+                  display:block;  
+              }
+          }  
+      }
+  }
+  @import "animation.scss";
+
+  &Left{
+      width:80%;
+      h3,h4{
+          margin:0;
+
+          //overflow: hidden;
+          //text-overflow: ellipsis;
+          //white-space: nowrap;
+          padding-bottom: 1px;
+      }
+  }
+
+  &Price{
+      width:20%;
+      padding-left: 20px;
+  }
+
+  &Right{
+      width:0%;
+      background-color:#99e2d0;
+
+      display:flex;
+      justify-content: center;
+      align-items: center;
+
+      z-index:1;
+
+      transition:width 1s ease-in-out;
+
+      p{
+          margin-left: 10px;
+      }
+
+
+      .fa-check-circle{
+          display: none;
+          //color: #99e2d0;
+          //padding: 20px 20px;
+
+          //background-color: white;
+          //-webkit-text-fill-color:transparent ;
+          //-webkit-text-stroke-color:transparent;
+          //background-clip: text;
+          //display: block;
+          //z-index:2;
+          opacity:1;
+          transform:rotate (-360deg);
+          transition:all 1s ease-in-out
+      }
+  }*/
 }
 .menuCardTitle {
   display: flex;
@@ -51,10 +156,26 @@ body {
 .menuCard h1 {
   font-family: "Shrikhand";
   padding-left: 15px;
-  font-size: 1.6em;
 }
-.menuCard i {
-  padding-right: 30px;
+.menuCard .fa-heart {
+  height: 18px;
+  width: 18px;
+  margin: 25px 10px 0 0;
+  padding: 18px 18px;
+  color: white;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  transition: all 1000ms;
+}
+.menuCard .fa-heart:hover {
+  -webkit-text-stroke-width: white;
+  -webkit-text-stroke-color: transparent;
+  display: block;
+  background: -webkit-linear-gradient(#FF79DA, #9356DC);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transform: scale(1.01);
 }
 .menuCard h2 {
   align-items: flex-start;
@@ -71,83 +192,72 @@ body {
   margin-bottom: 20px;
   margin-left: 15px;
 }
-.menuCardCase1, .menuCardCase2, .menuCardCase3, .menuCardCase4, .menuCardCase5, .menuCardCase6, .menuCardCase7, .menuCardCase8, .menuCardCase9 {
-  width: 90%;
-  border-radius: 20px;
-  box-shadow: 0.2em 0.2em 0.8em rgba(0, 0, 0, 0.2);
-  background-color: white;
+.menuCardCase {
+  height: 40px;
+  margin: 0 0 14px 0;
+  padding: 15px 60px 15px 15px;
   position: relative;
-  margin: 0 10px 10px 10px;
-  animation: apparition 1.6s;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: padding-right 0.4s;
 }
-.menuCardCase1 {
-  animation-delay: 0s;
-  display: block;
+.menuCardCase:hover {
+  padding-right: 130px;
 }
-.menuCardCase2 {
-  animation-delay: 0.2s;
-  display: block;
+.menuCardCase:hover .menuCardRight {
+  right: 0px;
+  width: 70px;
 }
-.menuCardCase3 {
-  animation-delay: 0.4s;
-  display: block;
+.menuCardCase:hover .menuCardPrice {
+  right: 90px;
 }
-.menuCardCase4 {
-  animation-delay: 0.6s;
-  display: block;
+.menuCardCase:hover i {
+  right: 0;
+  animation: rotation 0.4s;
 }
-.menuCardCase5 {
-  animation-delay: 0.8s;
-  display: block;
+.menuCardLeft {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: clip ellipsis;
 }
-.menuCardCase6 {
-  animation-delay: 1s;
-  display: block;
-}
-.menuCardCase7 {
-  animation-delay: 1.2s;
-  display: block;
-}
-.menuCardCase8 {
-  animation-delay: 1.4s;
-  display: block;
-}
-.menuCardCase9 {
-  animation-delay: 1.6s;
-  display: block;
-}
-.menuCard h3 {
-  margin: 0;
-  padding: 10px 0 0px 15px;
-}
-.menuCard h4 {
-  margin: 0;
-  padding: 5px 0 10px 15px;
-}
-.menuCard span {
+.menuCardPrice {
   position: absolute;
-  bottom: 10px;
+  transition: right 0.4s;
   right: 20px;
+  bottom: 2px;
 }
-.menuCard i {
+.menuCardRight {
   position: absolute;
-  bottom: 20px;
-  right: 20px;
-  width: 18px;
-  height: 18px;
-  color: #99e2d0;
+  right: -21px;
+  top: 0;
+  height: 70px;
+  background-color: #99e2d0;
+  border-radius: 0 15px 15px 0;
+  transition: right 0.4s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.menuCardRight i {
+  color: white;
 }
 .menu button {
   background: linear-gradient(#FF79DA, #9356DC);
   color: white;
+  text-align: center;
   border: none;
   padding: 17px 23px;
   border-radius: 100px;
-  margin: 20px;
   width: 185px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: block;
+  margin: 30px 0 30px 80px;
+  transition: all 150ms ease-in-out;
 }
 .menu button:hover {
-  transform: scale(1.02);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+  background: linear-gradient(#ff7fdb, #a272db);
 }
 
 /*Animation*/
@@ -161,12 +271,20 @@ body {
     opacity: 1;
   }
 }
+@keyframes translationRight {
+  from {
+    width: 0;
+  }
+  to {
+    width: 30%;
+  }
+}
 @keyframes rotation {
   from {
     transform: rotate(0);
   }
   to {
-    transform: rotate(360);
+    transform: rotate(360deg);
   }
 }
 .footer {
