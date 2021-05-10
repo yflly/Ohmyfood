@@ -8,16 +8,20 @@
   position: relative;
 }
 .header .logo {
-  width: 50%;
+  width: 200px;
   height: 50%;
 }
 .header i {
   position: absolute;
   left: 25px;
+  bottom: 20px;
   width: 18px;
   height: 18px;
 }
 
+/*COLORS*/
+/*LIGHTEN*/
+/*SHADOWS*/
 body {
   margin: 0;
   font-family: "Roboto", sans-serif;
@@ -65,88 +69,6 @@ p {
   padding: 0 10px 16px 10px;
   position: relative;
   z-index: 1;
-  /*&Case{
-      width:94%;
-      border-radius: 20px;
-      box-shadow: 2px 2px 8px  rgba(0, 0, 0, 0.2);
-      background-color: white;
-      margin: 0 10px 10px 10px;
-
-      display:flex;
-      flex-direction: row;
-      overflow:hidden;
-
-      animation: apparition 1.6s;
-
-      &:hover{
-          .menuCardLeft{
-              h3,h4{
-              overflow: hidden;
-              text-overflow: ellipsis;
-              white-space: nowrap;
-              }
-          }
-          .menuCardRight{
-              animation: translationRight 2s;
-              .fa-check-circle{
-                  animation: rotation 2s; 
-                  display:block;  
-              }
-          }  
-      }
-  }
-  @import "animation.scss";
-
-  &Left{
-      width:80%;
-      h3,h4{
-          margin:0;
-
-          //overflow: hidden;
-          //text-overflow: ellipsis;
-          //white-space: nowrap;
-          padding-bottom: 1px;
-      }
-  }
-
-  &Price{
-      width:20%;
-      padding-left: 20px;
-  }
-
-  &Right{
-      width:0%;
-      background-color:#99e2d0;
-
-      display:flex;
-      justify-content: center;
-      align-items: center;
-
-      z-index:1;
-
-      transition:width 1s ease-in-out;
-
-      p{
-          margin-left: 10px;
-      }
-
-
-      .fa-check-circle{
-          display: none;
-          //color: #99e2d0;
-          //padding: 20px 20px;
-
-          //background-color: white;
-          //-webkit-text-fill-color:transparent ;
-          //-webkit-text-stroke-color:transparent;
-          //background-clip: text;
-          //display: block;
-          //z-index:2;
-          opacity:1;
-          transform:rotate (-360deg);
-          transition:all 1s ease-in-out
-      }
-  }*/
 }
 .menuCardTitle {
   display: flex;
@@ -154,7 +76,7 @@ p {
   align-items: center;
 }
 .menuCard h1 {
-  font-family: "Shrikhand";
+  font-family: "Shrikhand", sans-serif;
   padding-left: 15px;
 }
 .menuCard .fa-heart {
@@ -171,7 +93,7 @@ p {
   -webkit-text-stroke-width: white;
   -webkit-text-stroke-color: transparent;
   display: block;
-  background: -webkit-linear-gradient(#FF79DA, #9356DC);
+  background: -webkit-linear-gradient(#ff79da, #9356dc);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -201,9 +123,16 @@ p {
   border-radius: 20px;
   overflow: hidden;
   transition: padding-right 0.4s;
+  animation: apparition 1.6s;
 }
 .menuCardCase:hover {
   padding-right: 130px;
+}
+.menuCardCase:hover .menuCardLeft {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 208px;
 }
 .menuCardCase:hover .menuCardRight {
   right: 0px;
@@ -219,7 +148,7 @@ p {
 .menuCardLeft {
   white-space: nowrap;
   overflow: hidden;
-  text-overflow: clip ellipsis;
+  text-overflow: ellipsis;
 }
 .menuCardPrice {
   position: absolute;
@@ -243,24 +172,89 @@ p {
   color: white;
 }
 .menu button {
-  background: linear-gradient(#FF79DA, #9356DC);
+  background: linear-gradient(#ff79da, #9356dc);
   color: white;
-  text-align: center;
   border: none;
   padding: 17px 23px;
   border-radius: 100px;
   width: 185px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  display: block;
   margin: 30px 0 30px 80px;
   transition: all 150ms ease-in-out;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 .menu button:hover {
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
-  background: linear-gradient(#ff7fdb, #a272db);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  background: linear-gradient(#ff88de, #9b63df);
 }
 
-/*Animation*/
+/*MEDIA QUERIES*/
+@media screen and (min-width: 768px) {
+  .menu img {
+    object-fit: none;
+    height: 220px;
+  }
+
+  .menuCard {
+    margin: -80px 150px 0px 150px;
+  }
+  .menuCard button {
+    margin: 30px 0px 30px 120px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .menu img {
+    object-fit: none;
+    height: 300px;
+  }
+
+  .menuCard {
+    margin: -80px 400px 0px 400px;
+  }
+  .menuCard button {
+    margin: 30px 0 30px 160px;
+  }
+}
+/*Menu apparition progressive avec un delay de 0.2s */
+#delay1 {
+  animation-delay: 0s;
+}
+
+#delay2 {
+  animation-delay: 0.2s;
+}
+
+#delay3 {
+  animation-delay: 0.4s;
+}
+
+#delay4 {
+  animation-delay: 0.6s;
+}
+
+#delay5 {
+  animation-delay: 0.8s;
+}
+
+#delay6 {
+  animation-delay: 1s;
+}
+
+#delay7 {
+  animation-delay: 1.2s;
+}
+
+#delay8 {
+  animation-delay: 1.4s;
+}
+
+#delay9 {
+  animation-delay: 1.6s;
+}
+
+#delay10 {
+  animation-delay: 1.8s;
+}
+
 @keyframes apparition {
   from {
     transform: translateY(30px);
@@ -269,14 +263,6 @@ p {
   to {
     transform: translateY(0);
     opacity: 1;
-  }
-}
-@keyframes translationRight {
-  from {
-    width: 0;
-  }
-  to {
-    width: 30%;
   }
 }
 @keyframes rotation {

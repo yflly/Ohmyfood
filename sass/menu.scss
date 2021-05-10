@@ -1,8 +1,9 @@
 @import "header.scss";
+@import "variables.scss";
 
 body{
     margin:0;
-    font-family: "Roboto", sans-serif;
+    font-family:'Roboto', sans-serif;
 }
 
 h1{
@@ -39,7 +40,7 @@ h1{
         z-index:2;
     }
     &Card{
-        background: #f6f6f6;
+        background: $background-grey;
         border-radius: 20px 20px 0 0;
         margin-top: -20px;
         padding: 0 10px 16px 10px;
@@ -52,17 +53,17 @@ h1{
             align-items: center;            
         }
         h1{
-            font-family: "Shrikhand";            
+            font-family: 'Shrikhand',sans-serif;            
             padding-left: 15px;
 
         }
         .fa-heart{
             height:18px;
             width:18px;
-            //margin-right: 10px;
+
             margin: 25px 10px 0 0;
             padding:18px 18px;
-            //-webkit-text-fill-color: white;
+            
             color:white;
             -webkit-text-stroke-width: 1px;
             -webkit-text-stroke-color: black;
@@ -73,9 +74,8 @@ h1{
                 -webkit-text-stroke-width:white;
                 -webkit-text-stroke-color:transparent;
 
-                //color: #9c47fc;
                 display: block;
-                background: -webkit-linear-gradient(#FF79DA, #9356DC);
+                background: -webkit-linear-gradient($secondary-color, $primary-color);
                 background-clip: text;
                 -webkit-background-clip:text;
                 -webkit-text-fill-color: transparent; 
@@ -94,7 +94,7 @@ h1{
             width:40px;
             height:3px;
             border:none;
-            background-color: #99e2d0 ;
+            background-color: $tertiary-color ;
             color: #99e2d0;
             margin:0; 
             margin-bottom: 20px; 
@@ -113,15 +113,24 @@ h1{
             overflow:hidden;
             transition: padding-right 0.4s;
 
+            animation: apparition 1.6s;
+
             &:hover{
                 padding-right: 130px;
             }
             &:hover{
+                .menuCardLeft{
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow:ellipsis;
+                    width:208px;
+                } 
+            }  
+            &:hover{
                 .menuCardRight{
                     right: 0px;
                     width:70px;
-                }
-                
+                } 
             }  
             &:hover{
                 .menuCardPrice{
@@ -139,7 +148,7 @@ h1{
             &Left{
                 white-space: nowrap;
                 overflow: hidden;
-                text-overflow: clip ellipsis;
+                text-overflow:ellipsis;
             }
     
             &Price{
@@ -155,7 +164,7 @@ h1{
                 right:-21px;
                 top:0;
                 height:70px;
-                background-color: #99e2d0;
+                background-color: $tertiary-color;
                 border-radius: 0 15px 15px 0;
                 transition: right 0.4s;
 
@@ -164,153 +173,63 @@ h1{
                 align-items: center;
 
                 i{
-                    color:white
+                    color:white;
                 }
             }
-        
-
-        
-        /*&Case{
-            width:94%;
-            border-radius: 20px;
-            box-shadow: 2px 2px 8px  rgba(0, 0, 0, 0.2);
-            background-color: white;
-            margin: 0 10px 10px 10px;
-
-            display:flex;
-            flex-direction: row;
-            overflow:hidden;
-            
-            animation: apparition 1.6s;
-
-            &:hover{
-                .menuCardLeft{
-                    h3,h4{
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                    white-space: nowrap;
-                    }
-                }
-                .menuCardRight{
-                    animation: translationRight 2s;
-                    .fa-check-circle{
-                        animation: rotation 2s; 
-                        display:block;  
-                    }
-                }  
-            }
-        }
-        @import "animation.scss";
-
-        &Left{
-            width:80%;
-            h3,h4{
-                margin:0;
-
-                //overflow: hidden;
-                //text-overflow: ellipsis;
-                //white-space: nowrap;
-                padding-bottom: 1px;
-            }
-        }
-       
-        &Price{
-            width:20%;
-            padding-left: 20px;
-        }
-
-        &Right{
-            width:0%;
-            background-color:#99e2d0;
-
-            display:flex;
-            justify-content: center;
-            align-items: center;
-
-            z-index:1;
-
-            transition:width 1s ease-in-out;
-
-            p{
-                margin-left: 10px;
-            }
-            
-
-            .fa-check-circle{
-                display: none;
-                //color: #99e2d0;
-                //padding: 20px 20px;
-
-                //background-color: white;
-                //-webkit-text-fill-color:transparent ;
-                //-webkit-text-stroke-color:transparent;
-                //background-clip: text;
-                //display: block;
-                //z-index:2;
-                opacity:1;
-                transform:rotate (-360deg);
-                transition:all 1s ease-in-out
-            }
-        }*/
     }
-    
     button{
-        background: linear-gradient(#FF79DA, #9356DC);
+        background: linear-gradient($secondary-color, $primary-color);
         color: white;
-        text-align: center;
-        //font-weight: bold;
 
         border: none;
         padding: 17px 23px;
         border-radius: 100px;
         width:185px;
-
-        box-shadow: 0 4px 8px rgba(black, 0.2);
-
-        display:block;
         margin:30px 0 30px 80px;
 
         transition: all 150ms ease-in-out;
-        
 
+        box-shadow: $shadow-normal;
         &:hover {
-            //transform:scale(1.02);
-            box-shadow: 0 8px 16px rgba(black, 0.4);
-            background: linear-gradient(#ff7fdb, #a272db);
- 
+            box-shadow: $shadow-hover;
+            background: linear-gradient($secondary-lighten, $primary-lighten);
+        }  
+    }    
+}
+
+/*MEDIA QUERIES*/
+@media screen and (min-width: 768px) {
+    .menu{
+        img{
+            object-fit:none;
+            height:220px;
+        }
+    }  
+    .menuCard{
+        margin: -80px 150px 0px 150px;
+        button{
+            margin:30px 0px 30px 120px;
         }
     }
-}
+    
+  }
+
+  @media screen and (min-width: 992px) {
+    .menu{
+        img{
+            object-fit:none;
+            height:300px;
+        }
+    }  
+    .menuCard{
+    margin: -80px 400px 0px 400px;
+    button{
+        margin:30px 0 30px 160px;
+    }
+    }
+    
+  }
 
 
-
-/*Animation*/
-@keyframes apparition {
-    from{
-        transform: translateY(30px);
-        opacity:0;
-    }
-    to{
-        transform: translateY(0);
-        opacity:1;
-    }
-}
-
-@keyframes translationRight {
-    from {
-        width:0;
-    }
-    to {
-        width:30%;
-    }
-}
-
-@keyframes rotation {
-    from{
-        transform: rotate(0)
-    }
-    to{
-        transform: rotate(360deg)
-    }
-}
+@import "animation.scss";
 @import "footer.scss";
