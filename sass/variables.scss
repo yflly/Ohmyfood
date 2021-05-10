@@ -1,0 +1,15 @@
+/*COLORS*/
+$primary-color:#9356dc;
+$secondary-color:#ff79da;
+$tertiary-color:#99e2d0;
+$background-grey:#f6f6f6;
+
+/*LIGHTEN*/
+$primary-lighten:lighten($primary-color, 3);
+$secondary-lighten:lighten($secondary-color, 3);
+
+
+
+/*SHADOWS*/
+$shadow-normal:0 4px 8px rgba(black, 0.2);
+$shadow-hover:0 4px 8px rgba(black, 0.4);
