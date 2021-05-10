@@ -1,37 +1,51 @@
 /*Menu apparition progressive avec un delay de 0.2s */
-&Case1{
+#delay1{
     animation-delay: 0s;
-    display: block;
 }
-&Case2{
+#delay2{
     animation-delay: 0.2s;
-    display: block;
 }
-&Case3{
+#delay3{
     animation-delay: 0.4s;
-    display: block;
 }
-&Case4{
+#delay4{
     animation-delay: 0.6s;
-    display: block;
 }
-&Case5{
+#delay5{
     animation-delay: 0.8s;
-    display: block;
 }
-&Case6{
+#delay6{
     animation-delay: 1s;
-    display: block;
 }
-&Case7{
+#delay7{
     animation-delay: 1.2s;
-    display: block;
 }
-&Case8{
+#delay8{
     animation-delay: 1.4s;
-    display: block;
 }
-&Case9{
+#delay9{
     animation-delay: 1.6s;
-    display: block;
+}
+#delay10{
+    animation-delay: 1.8s;
+}
+
+@keyframes apparition {
+    from{
+        transform: translateY(30px);
+        opacity:0;
+    }
+    to{
+        transform: translateY(0);
+        opacity:1;
+    }
+}
+
+@keyframes rotation {
+    from{
+        transform: rotate(0)
+    }
+    to{
+        transform: rotate(360deg)
+    }
 }
