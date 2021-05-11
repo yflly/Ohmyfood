@@ -44,7 +44,7 @@ h3 {
   margin: 0;
 }
 
-h4 {
+span {
   font-size: 0.9em;
   font-weight: lighter;
   margin: 0;
@@ -96,7 +96,6 @@ p {
   -webkit-text-stroke-color: transparent;
   display: block;
   background: -webkit-linear-gradient(#ff79da, #9356dc);
-  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   transform: scale(1.01);
@@ -121,7 +120,7 @@ p {
   margin: 0 0 14px 0;
   padding: 15px 60px 15px 15px;
   position: relative;
-  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   border-radius: 20px;
   overflow: hidden;
   transition: padding-right 0.4s;
@@ -129,12 +128,7 @@ p {
 }
 .menuCardCase:hover {
   padding-right: 130px;
-}
-.menuCardCase:hover .menuCardLeft {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  width: 208px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
 .menuCardCase:hover .menuCardRight {
   right: 0px;
@@ -202,9 +196,6 @@ p {
   .menuCard {
     margin: -80px 150px 0px 150px;
   }
-  .menuCard button {
-    text-align: center;
-  }
 }
 @media screen and (min-width: 992px) {
   .menu img {
@@ -214,9 +205,6 @@ p {
 
   .menuCard {
     margin: -80px 400px 0px 400px;
-  }
-  .menuCard button {
-    text-align: center;
   }
 }
 /*Menu apparition progressive avec un delay de 0.2s */
