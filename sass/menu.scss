@@ -1,244 +1,229 @@
 @import "header.scss";
 @import "variables.scss";
 
-body{
-    margin:0;
-    font-family:'Roboto', sans-serif;
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
 }
 
-h1{
-    font-size: 1.5em;
-    margin: 25px 0 0 0;
-  }
+h1 {
+  font-size: 1.5em;
+  margin: 25px 0 0 0;
+}
 
-  h2{
-    font-size: 1.1em;
-    font-weight: lighter;
-    text-transform:uppercase;
-  }
-  h3{
-    font-size: 1em;
-    font-weight: bold;
-    margin:0;
-  }
-  h4{
-    font-size: 0.9em;
-    font-weight: lighter;
-    margin:0;
-  }
-  p{
-    font-size: 1em;
-    padding-top:17px;
-    font-weight: bold;
-  }
+h2 {
+  font-size: 1.1em;
+  font-weight: lighter;
+  text-transform: uppercase;
+}
+h3 {
+  font-size: 1em;
+  font-weight: bold;
+  margin: 0;
+}
+span {
+  font-size: 0.9em;
+  font-weight: lighter;
+  margin: 0;
+}
+p {
+  font-size: 1em;
+  padding-top: 17px;
+  font-weight: bold;
+}
 
-.menu{
-    img{
-        object-fit: cover;
-        width:100%;
-        height:175px;
-        z-index:2;
+.menu {
+  img {
+    object-fit: cover;
+    width: 100%;
+    height: 175px;
+    z-index: 2;
+  }
+  &Card {
+    background: $background-grey;
+    border-radius: 20px 20px 0 0;
+    margin-top: -20px;
+    padding: 0 10px 16px 10px;
+    position: relative;
+    z-index: 1;
+
+    display: flex;
+    flex-direction: column;
+
+    &Title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
-    &Card{
-        background: $background-grey;
-        border-radius: 20px 20px 0 0;
-        margin-top: -20px;
-        padding: 0 10px 16px 10px;
-        position:relative;
-        z-index: 1;
-
-        display:flex;
-        flex-direction: column;
-        
-        &Title{
-            display: flex;
-            justify-content: space-between;
-            align-items: center;            
-        }
-        h1{
-            font-family: 'Shrikhand',sans-serif;            
-            padding-left: 15px;
-
-        }
-        .fa-heart{
-            height:18px;
-            width:18px;
-
-            margin: 25px 10px 0 0;
-            padding:18px 18px;
-            
-            color:white;
-            -webkit-text-stroke-width: 1px;
-            -webkit-text-stroke-color: black;
-
-            transition: all 1000ms;
-
-            &:hover{
-                -webkit-text-stroke-width:white;
-                -webkit-text-stroke-color:transparent;
-
-                display: block;
-                background: -webkit-linear-gradient($secondary-color, $primary-color);
-                background-clip: text;
-                -webkit-background-clip:text;
-                -webkit-text-fill-color: transparent; 
-
-               transform:scale(1.01);
-            }
-        }
-
-        h2{
-            align-items:flex-start;
-            margin-bottom: 5px;
-            padding-left: 15px;
-        }
-        
-        hr{
-            width:40px;
-            height:3px;
-            border:none;
-            background-color: $tertiary-color ;
-            color: #99e2d0;
-            margin:0; 
-            margin-bottom: 20px; 
-            margin-left: 15px;  
-        }
-
-        &Case{
-            height: 40px;
-            margin: 0 0 14px 0;
-            padding: 15px 60px 15px 15px;
-
-            position:relative;
-            box-shadow: 2px 2px 8px  rgba(0, 0, 0, 0.2);
-            border-radius: 20px;
-
-            overflow:hidden;
-            transition: padding-right 0.4s;
-
-            animation: apparition 1.6s;
-
-            &:hover{
-                padding-right: 130px;
-            }
-            &:hover{
-                .menuCardLeft{
-                    white-space: nowrap;
-                    overflow: hidden;
-                    text-overflow:ellipsis;
-                    width:208px;
-                } 
-            }  
-            &:hover{
-                .menuCardRight{
-                    right: 0px;
-                    width:70px;
-                } 
-            }  
-            &:hover{
-                .menuCardPrice{
-                    right:90px;
-                }
-            }
-            &:hover{
-                i{
-                    right:0;
-                    animation:rotation 0.4s;
-                }
-            }
-        }
-
-            &Left{
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow:ellipsis;
-            }
-    
-            &Price{
-                position: absolute;
-                transition: right 0.4s;
-
-                right: 20px;
-                bottom:2px;
-
-            }
-            &Right{
-                position:absolute;
-                right:-21px;
-                top:0;
-                height:70px;
-                background-color: $tertiary-color;
-                border-radius: 0 15px 15px 0;
-                transition: right 0.4s;
-
-                display:flex;
-                justify-content: center;
-                align-items: center;
-
-                i{
-                    color:white;
-                }
-            }
-            &Button{
-                text-align: center;
-            }
+    h1 {
+      font-family: "Shrikhand", sans-serif;
+      padding-left: 15px;
     }
-    button{
+    .fa-heart {
+      height: 18px;
+      width: 18px;
+
+      margin: 25px 10px 0 0;
+      padding: 18px 18px;
+
+      color: white;
+      -webkit-text-stroke-width: 1px;
+      -webkit-text-stroke-color: black;
+
+      transition: all 1000ms;
+
+      &:hover {
+        -webkit-text-stroke-width: white;
+        -webkit-text-stroke-color: transparent;
+
+        display: block;
         background: linear-gradient($secondary-color, $primary-color);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+        cursor:pointer;
+        transform: scale(1.01);
+      }
+    }
+
+    h2 {
+      align-items: flex-start;
+      margin-top: 20px;
+      margin-bottom: 5px;
+      padding-left: 15px;
+    }
+
+    hr {
+      width: 40px;
+      height: 3px;
+      border: none;
+      background-color: $tertiary-color;
+      color: #99e2d0;
+      margin: 0;
+      margin-bottom: 20px;
+      margin-left: 15px;
+    }
+
+    &Case {
+      height: 40px;
+      margin: 0 0 14px 0;
+      padding: 15px 60px 15px 15px;
+
+      position: relative;
+      box-shadow: $shadow-normal;
+      border-radius: 20px;
+
+      overflow: hidden;
+      transition: padding-right 0.4s;
+
+      animation: apparition 1.6s;
+
+      &:hover {
+        padding-right: 130px;
+        box-shadow: $shadow-hover;
+        cursor:pointer;
+      }
+      &:hover {
+        .menuCardRight {
+          right: 0px;
+          width: 70px;
+        }
+      }
+      &:hover {
+        .menuCardPrice {
+          right: 90px;
+        }
+      }
+      &:hover {
+        i {
+          right: 0;
+          animation: rotation 0.4s;
+        }
+      }
+    }
+
+    &Left {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    &Price {
+      position: absolute;
+      transition: right 0.4s;
+
+      right: 20px;
+      bottom: 2px;
+    }
+    &Right {
+      position: absolute;
+      right: -21px;
+      top: 0;
+      height: 70px;
+      background-color: $tertiary-color;
+      border-radius: 0 15px 15px 0;
+      transition: right 0.4s;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      i {
         color: white;
+      }
+    }
+    &Button {
+      text-align: center;
+    }
+  }
+  button {
+    background: linear-gradient($secondary-color, $primary-color);
+    color: white;
 
-        border: none;
-        padding: 17px 23px;
-        border-radius: 100px;
-        width:185px;
-        //margin:30px 0 30px 80px;
-        text-align: center;
+    margin:15px 0 15px 0;
+    border: none;
+    padding: 17px 23px;
+    border-radius: 100px;
+    width: 185px;
 
-        transition: all 150ms ease-in-out;
+    text-align: center;
 
-        box-shadow: $shadow-normal;
-        &:hover {
-            box-shadow: $shadow-hover;
-            background: linear-gradient($secondary-lighten, $primary-lighten);
-        }  
-    }    
+    transition: all 150ms ease-in-out;
+
+    box-shadow: $shadow-normal;
+    &:hover {
+      cursor:pointer;
+      box-shadow: $shadow-hover;
+      background: linear-gradient($secondary-lighten, $primary-lighten);
+    }
+  }
 }
 
 /*MEDIA QUERIES*/
 @media screen and (min-width: 768px) {
-    .menu{
-        img{
-            object-fit:none;
-            height:220px;
-        }
-    }  
-    .menuCard{
-        margin: -80px 150px 0px 150px;
-        button{
-            text-align: center;
-            //margin:30px 0px 30px 120px;
-        }
+  .menu {
+    img {
+      object-fit: none;
+      height: 220px;
     }
-    
   }
+  .menuCard {
+    margin: -80px 150px 0px 150px;
+  }
+}
 
-  @media screen and (min-width: 992px) {
-    .menu{
-        img{
-            object-fit:none;
-            height:300px;
-        }
-    }  
-    .menuCard{
+@media screen and (min-width: 992px) {
+  .menu {
+    img {
+      object-fit: none;
+      height: 300px;
+    }
+  }
+  .menuCard {
     margin: -80px 400px 0px 400px;
-    button{
-      text-align: center;
-        //margin:30px 0 30px 420px;
-    }
-    }
-    
   }
-
+}
 
 @import "animation.scss";
 @import "footer.scss";

@@ -95,13 +95,16 @@ p {
   -webkit-text-stroke-width: white;
   -webkit-text-stroke-color: transparent;
   display: block;
-  background: -webkit-linear-gradient(#ff79da, #9356dc);
+  background: linear-gradient(#ff79da, #9356dc);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  cursor: pointer;
   transform: scale(1.01);
 }
 .menuCard h2 {
   align-items: flex-start;
+  margin-top: 20px;
   margin-bottom: 5px;
   padding-left: 15px;
 }
@@ -129,6 +132,7 @@ p {
 .menuCardCase:hover {
   padding-right: 130px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
 }
 .menuCardCase:hover .menuCardRight {
   right: 0px;
@@ -173,6 +177,7 @@ p {
 .menu button {
   background: linear-gradient(#ff79da, #9356dc);
   color: white;
+  margin: 15px 0 15px 0;
   border: none;
   padding: 17px 23px;
   border-radius: 100px;
@@ -182,6 +187,7 @@ p {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 .menu button:hover {
+  cursor: pointer;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
   background: linear-gradient(#ff88de, #9b63df);
 }
@@ -303,7 +309,7 @@ p {
 }
 @media screen and (min-width: 992px) {
   .footer {
-    text-align: none;
+    text-align: initial;
   }
   .footer ul {
     display: flex;
