@@ -309,7 +309,7 @@ p {
 }
 @media screen and (min-width: 992px) {
   .footer {
-    text-align: initial;
+    text-align: center;
   }
   .footer ul {
     display: flex;
