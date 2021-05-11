@@ -27,3 +27,27 @@
         }
     }
 }
+
+
+/*MEDIA QUERIES*/
+@media screen and (min-width: 768px) {
+.footer{
+    text-align: center;
+}
+  }
+  
+  @media screen and (min-width: 992px) {
+    .footer{
+        text-align: none;
+        ul{
+            display: flex;
+            flex-direction: row;
+            justify-content:center;
+            li{
+                padding-left: 40px;
+                padding-right: 40px;
+                padding-top: 10px;
+            }
+        }
+    }
+  }

@@ -46,9 +46,6 @@
   }
 }
 @keyframes dots {
-  /*0%{
-  	transform:scale(O)
-  }*/
   0%, 20% {
     opacity: 1;
   }
@@ -329,6 +326,28 @@ h2 {
   color: white;
   text-decoration: none;
   font-size: 0.9em;
+}
+
+/*MEDIA QUERIES*/
+@media screen and (min-width: 768px) {
+  .footer {
+    text-align: center;
+  }
+}
+@media screen and (min-width: 992px) {
+  .footer {
+    text-align: none;
+  }
+  .footer ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .footer ul li {
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 10px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
