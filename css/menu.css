@@ -1,0 +1,326 @@
+.header {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  position: relative;
+}
+.header .logo {
+  width: 200px;
+  height: 50%;
+}
+.header i {
+  position: absolute;
+  left: 25px;
+  bottom: 20px;
+  width: 18px;
+  height: 18px;
+}
+
+/*COLORS*/
+/*LIGHTEN*/
+/*SHADOWS*/
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+h1 {
+  font-size: 1.5em;
+  margin: 25px 0 0 0;
+}
+
+h2 {
+  font-size: 1.1em;
+  font-weight: lighter;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-size: 1em;
+  font-weight: bold;
+  margin: 0;
+}
+
+span {
+  font-size: 0.9em;
+  font-weight: lighter;
+  margin: 0;
+}
+
+p {
+  font-size: 1em;
+  padding-top: 17px;
+  font-weight: bold;
+}
+
+.menu img {
+  object-fit: cover;
+  width: 100%;
+  height: 175px;
+  z-index: 2;
+}
+.menuCard {
+  background: #f6f6f6;
+  border-radius: 20px 20px 0 0;
+  margin-top: -20px;
+  padding: 0 10px 16px 10px;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+}
+.menuCardTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.menuCard h1 {
+  font-family: "Shrikhand", sans-serif;
+  padding-left: 15px;
+}
+.menuCard .fa-heart {
+  height: 18px;
+  width: 18px;
+  margin: 25px 10px 0 0;
+  padding: 18px 18px;
+  color: white;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  transition: all 1000ms;
+}
+.menuCard .fa-heart:hover {
+  -webkit-text-stroke-width: white;
+  -webkit-text-stroke-color: transparent;
+  display: block;
+  background: linear-gradient(#ff79da, #9356dc);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  cursor: pointer;
+  transform: scale(1.01);
+}
+.menuCard h2 {
+  align-items: flex-start;
+  margin-top: 20px;
+  margin-bottom: 5px;
+  padding-left: 15px;
+}
+.menuCard hr {
+  width: 40px;
+  height: 3px;
+  border: none;
+  background-color: #99e2d0;
+  color: #99e2d0;
+  margin: 0;
+  margin-bottom: 20px;
+  margin-left: 15px;
+}
+.menuCardCase {
+  height: 40px;
+  margin: 0 0 14px 0;
+  padding: 15px 60px 15px 15px;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: padding-right 0.4s;
+  animation: apparition 1.6s;
+}
+.menuCardCase:hover {
+  padding-right: 130px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+}
+.menuCardCase:hover .menuCardRight {
+  right: 0px;
+  width: 70px;
+}
+.menuCardCase:hover .menuCardPrice {
+  right: 90px;
+}
+.menuCardCase:hover i {
+  right: 0;
+  animation: rotation 0.4s;
+}
+.menuCardLeft {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.menuCardPrice {
+  position: absolute;
+  transition: right 0.4s;
+  right: 20px;
+  bottom: 2px;
+}
+.menuCardRight {
+  position: absolute;
+  right: -21px;
+  top: 0;
+  height: 70px;
+  background-color: #99e2d0;
+  border-radius: 0 15px 15px 0;
+  transition: right 0.4s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.menuCardRight i {
+  color: white;
+}
+.menuCardButton {
+  text-align: center;
+}
+.menu button {
+  background: linear-gradient(#ff79da, #9356dc);
+  color: white;
+  margin: 15px 0 15px 0;
+  border: none;
+  padding: 17px 23px;
+  border-radius: 100px;
+  width: 185px;
+  text-align: center;
+  transition: all 150ms ease-in-out;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.menu button:hover {
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  background: linear-gradient(#ff88de, #9b63df);
+}
+
+/*MEDIA QUERIES*/
+@media screen and (min-width: 768px) {
+  .menu img {
+    object-fit: none;
+    height: 220px;
+  }
+
+  .menuCard {
+    margin: -80px 150px 0px 150px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .menu img {
+    object-fit: none;
+    height: 300px;
+  }
+
+  .menuCard {
+    margin: -80px 400px 0px 400px;
+  }
+}
+/*Menu apparition progressive avec un delay de 0.2s */
+#delay1 {
+  animation-delay: 0s;
+}
+
+#delay2 {
+  animation-delay: 0.2s;
+}
+
+#delay3 {
+  animation-delay: 0.4s;
+}
+
+#delay4 {
+  animation-delay: 0.6s;
+}
+
+#delay5 {
+  animation-delay: 0.8s;
+}
+
+#delay6 {
+  animation-delay: 1s;
+}
+
+#delay7 {
+  animation-delay: 1.2s;
+}
+
+#delay8 {
+  animation-delay: 1.4s;
+}
+
+#delay9 {
+  animation-delay: 1.6s;
+}
+
+#delay10 {
+  animation-delay: 1.8s;
+}
+
+@keyframes apparition {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes rotation {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.footer {
+  background-color: #353535;
+  color: white;
+  padding: 25px;
+}
+.footerLogo {
+  width: 100px;
+  margin-bottom: 0px;
+}
+.footer ul {
+  list-style: none;
+  text-decoration: none;
+  padding: 0;
+}
+.footer ul li {
+  margin-bottom: 10px;
+}
+.footer ul i {
+  width: 2px;
+  height: 2px;
+  margin-right: 20px;
+  font-size: 0.9em;
+}
+.footer ul a {
+  color: white;
+  text-decoration: none;
+  font-size: 0.9em;
+}
+
+/*MEDIA QUERIES*/
+@media screen and (min-width: 768px) {
+  .footer {
+    text-align: center;
+  }
+}
+@media screen and (min-width: 992px) {
+  .footer {
+    text-align: center;
+  }
+  .footer ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .footer ul li {
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 10px;
+  }
+}
+
+/*# sourceMappingURL=menu.css.map */
